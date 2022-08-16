@@ -125,3 +125,8 @@ LOGIN_URL = '/log-in'  # redirects to login page if user tries to access todos w
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('Looks like no local_settings.py was found. You must be on production.')
