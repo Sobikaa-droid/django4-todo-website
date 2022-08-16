@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-menu {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.gradient_bar {
+  background: linear-gradient(90deg, #d17979, #85a3d4 50%, #d1b579) #a64f08;
+  height: 250px;
+  position: absolute;
+  width: 100%;
+  padding: 25px 20px 100px 20px;
+}
+
+.btn {
+  border-radius: 24px;
+}
+
+#content {
+  padding: 3rem 0 0 0;
+}
+
+/* login and signup forms */
+.form_container {
+  margin: 12% 0 0 0;
+}
+
+/* home page content */
+#home_content {
+  padding: 2rem 0 2rem 0;
+  border-radius: 25px;
+  position: relative;
+}
+
+/* CARDS CARDS CARDS CARDS CARDS */
+.card_col {
+  margin-bottom: 4.49rem !important;
+}
+
+.card {
+  --bs-card-border-radius: 25px;
+  border-width: 0;
+}
+
+.card-body {
+  margin: 4rem 0 4rem 0;
+}
+
+.row>* {
+  padding-right: calc(var(--bs-gutter-x) * 1.5);
+  padding-left: calc(var(--bs-gutter-x) * 1.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.cards_row {
+  margin-top: calc(-1.5 * var(--bs-gutter-y));
+  margin-right: calc(-1.5 * var(--bs-gutter-x));
+  margin-left: calc(-1.5 * var(--bs-gutter-x));
+  margin-top: 4.5rem !important;
+}
+
+.fa_cards {
+  font-size: 5.5rem;
+}
+
+/* Create card */
+.create_card:hover .card-title {
+  color: white !important;
+}
+
+.create_card:hover .fa-calendar-plus {
+  color: white !important;
+}
+
+.create_card:hover {
+  background-color: #b5575f !important;
+}
+
+.fa-calendar-plus {
+  color: #b5575f;
+}
+
+/* Edit card */
+.edit_card:hover .card-title {
+  color: white !important;
+}
+
+.edit_card:hover .fa-square-pen {
+  color: white !important;
+}
+
+.edit_card:hover {
+  background-color: #b3b156 !important;
+}
+
+.fa-square-pen {
+  color: #b3b156;
+}
+
+/* Complete card */
+.complete_card:hover .card-title {
+  color: white !important;
+}
+
+.complete_card:hover .fa-calendar-check {
+  color: white !important;
+}
+
+.complete_card:hover {
+  background-color: #56b36d !important;
+}
+
+.fa-calendar-check {
+  color: #56b36d;
+}
+
+/* footer */
+footer {
+  margin: auto 0 0 0;
+}

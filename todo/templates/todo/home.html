@@ -1,0 +1,64 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}JustDoIt | The fastest way to create your todos{% endblock %}
+
+{% block content %}
+
+<div class="bg-light grey_container">
+  <div class='gradient_bar text-center'>
+    <h1 class='text-white'><i class='user-select-none'>#justdoit</i></h1>
+  </div>
+  <div class="container">
+    <div class="bd-masthead" id="content">
+
+      <div class="text-center mt-5 shadow bg-white" id='home_content'>
+        <h1 style='font-size: 3rem;'>Welcome</h1>
+        <div class='container w-75'>
+          <p class='text-break'>Life is fun. But life also sucks. There's a million different things you could be doing instead of eating bobiks. But what matters is <u>what</u> bobik you eat. I created <b><i>JustDoIt</i></b> for myself and for you to help you make sense
+            of all of your opportunities and live that life that matters most to you. Your new organized life awaits.</p>
+        </div>
+        <a role="button" class="btn btn-outline-primary btn-lg" href="{% if user.is_authenticated %}{% url 'createtodo' %}{% else %}{% url 'signupuser' %}{% endif %}">Get Started</a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-lg-3 text-center cards_row">
+
+      <div class="col card_col">
+        <div class="card shadow create_card">
+          <a class="text-decoration-none" href="{% if user.is_authenticated %}{% url 'createtodo' %}{% else %}{% url 'home' %}{% endif %}">
+          <div class="card-body">
+            <i class="fa-solid fa-calendar-plus fa_cards"></i>
+            <h1 class="card-title mt-3 text-muted">Create</h1>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col card_col">
+        <div class="card shadow edit_card">
+          <a class="text-decoration-none" href="{% if user.is_authenticated %}{% url 'currenttodos' %}{% else %}{% url 'home' %}{% endif %}">
+          <div class="card-body">
+            <i class="fa-solid fa-square-pen fa_cards"></i>
+            <h1 class="card-title mt-3 text-muted">Edit</h1>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col card_col">
+        <div class="card shadow complete_card">
+          <a class="text-decoration-none" href="{% if user.is_authenticated %}{% url 'completedtodos' %}{% else %}{% url 'home' %}{% endif %}">
+          <div class="card-body">
+            <i class="fa-solid fa-calendar-check fa_cards"></i>
+            <h1 class="card-title mt-3 text-muted">Complete</h1>
+          </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

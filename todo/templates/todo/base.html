@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="{% static 'todo/todo.png' %}">
+  <link rel="stylesheet" href="{% static 'todo/custom.css' %}">
+  <script src="https://kit.fontawesome.com/0df284c89f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class='bg-light'>
+  {% if request.path != "/sign-up/" and request.path != "/log-in/" %}
+  <header class="navbar navbar-expand-lg bg-white sticky-top shadow-sm" id="navbar_inner">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'todo/todo.png' %}" alt="image-logo" width="40" height="40" class="d-inline-block align-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% if user.is_authenticated %}
+
+        <ul class="navbar-nav me-auto site-menu">
+          <li class="nav-item {{ current }}">
+            <a class="nav-link" href="{% url 'currenttodos' %}">Current</a>
+          </li>
+          <li class="nav-item {{ completed }}">
+            <a class="nav-link" href="{% url 'completedtodos' %}">Completed</a>
+          </li>
+          <li class="nav-item {{ create }}">
+            <a class="nav-link" href="{% url 'createtodo' %}">Create</a>
+          </li>
+        </ul>
+
+        {% endif %}
+
+        <ul class="navbar-nav ms-auto site-menu">
+          {% if user.is_authenticated %}
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="dropdown">
+              {{ user.username }}
+            </a>
+            <ul class="dropdown-menu site-menu">
+              <li>
+                <a href="#" onclick="$('#signOutBtn').click()" class="dropdown-item">Log Out</a>
+                <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                  {% csrf_token %}
+                  <button id="signOutBtn" type="submit">Log Out</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'loginuser' %}">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'signupuser' %}">Sign Up</a>
+          </li>
+
+          {% endif %}
+        </ul>
+
+      </div>
+    </div>
+  </header>
+  {% endif %}
+
+  {% block content %}
+  <!-- block <any-name-here> -->
+  {% endblock %}
+
+  <footer class='container'>
+    <hr>
+    <div class="text-center text-muted">
+      <p class='mt-3'>© JustDoIt 2022 ®</p>
+    </div>
+  </footer>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+</html>

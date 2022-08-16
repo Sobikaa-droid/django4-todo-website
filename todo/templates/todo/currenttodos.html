@@ -1,0 +1,32 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}Todos{% endblock %}
+
+{% block content %}
+
+<div class="bg-light grey_container">
+  <div class="container">
+    <div class="bd-masthead" id="content">
+      {% if todos.count == 0 %}
+      <div class='text-center'>
+        <h1 class="mb-4">Looks like you have 0 todos</h1>
+        <button type="button" class="btn btn-outline-primary">Create New Todo</button>
+      </div>
+      {% else %}
+      <h3 class="text-center mb-5">You have {{ todos.count }} unfinished todo{{ todos.count|pluralize }}</h3>
+      {% endif %}
+
+      <div class="list-group">
+        {% for todo in todos %}
+        <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
+          <h5 class="mb-1">
+            {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}</h5>
+          <small class="text-muted">{{ todo.creation_date|date:'M j Y H:i' }}</small>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
