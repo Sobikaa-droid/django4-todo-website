@@ -128,3 +128,9 @@ body {
 footer {
   margin: auto 0 0 0;
 }
+
+@media (max-width: 650px) {
+  .justdoitsign {
+    font-size: 2.5rem;
+  }
+}
