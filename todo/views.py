@@ -105,7 +105,7 @@ def completetodo(request, todo_pk):
     if request.method == 'POST':
         todo.completed_date = timezone.now()
         todo.save()
-        return redirect('currenttodos')
+        return redirect('completedtodos')
 
 
 @login_required

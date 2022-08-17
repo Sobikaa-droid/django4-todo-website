@@ -30,9 +30,14 @@ body {
   padding: 3rem 0 0 0;
 }
 
-/* login and signup forms */
+/* login forms and todo forms */
 .form_container {
   margin: 12% 0 0 0;
+}
+
+.todo_form_container {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* home page content */
