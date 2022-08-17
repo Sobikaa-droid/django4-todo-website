@@ -8,7 +8,7 @@
   <div class="container">
     <div class="bd-masthead" id="content">
       <div class="container row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-5 mb-5">
           <h1>Edit Todo</h1>
           {% if error %}
           <div class="alert alert-danger" role="alert">
@@ -29,11 +29,11 @@
               <label class="form-check-label" for="important">Important</label>
             </div>
             <div class="mt-3">
-              <button type="submit" class="btn btn-outline-primary"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+              <button type="submit" class="btn btn-outline-primary me-3 mb-3 view_todo_button"><i class="fa-solid fa-floppy-disk"></i> Save</button>
               {% if todo.completed_date is None %}
-              <button type="button" class="btn btn-outline-success" onclick="$('#complete').click()"><i class="fa-solid fa-check"></i> Complete</button>
+              <button type="button" class="btn btn-outline-success me-3 mb-3 view_todo_button" onclick="$('#complete').click()"><i class="fa-solid fa-check"></i> Complete</button>
               {% endif %}
-              <button type="button" class="btn btn-outline-danger" onclick="$('#delete').click()"><i class="fa-solid fa-trash-can"></i> Delete</button>
+              <button type="button" class="btn btn-outline-danger me-3 mb-3 view_todo_button" onclick="$('#delete').click()"><i class="fa-solid fa-trash-can"></i> Delete</button>
             </div>
           </form>
         </div>

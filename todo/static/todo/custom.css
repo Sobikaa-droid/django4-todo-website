@@ -19,7 +19,7 @@ body {
   height: 250px;
   position: absolute;
   width: 100%;
-  padding: 25px 20px 100px 20px;
+  padding: 1.45rem 1.25rem 6.25rem 1.25rem
 }
 
 .btn {
@@ -44,7 +44,7 @@ body {
 
 /* CARDS CARDS CARDS CARDS CARDS */
 .card_col {
-  margin-bottom: 4.49rem !important;
+  margin-bottom: 3.49rem !important;
 }
 
 .card {
@@ -53,10 +53,10 @@ body {
 }
 
 .card-body {
-  margin: 4rem 0 4rem 0;
+  margin: 5rem 0 4rem 0;
 }
 
-.row>* {
+.cards_row>* {
   padding-right: calc(var(--bs-gutter-x) * 1.5);
   padding-left: calc(var(--bs-gutter-x) * 1.5);
   margin-top: var(--bs-gutter-y);
@@ -129,8 +129,17 @@ footer {
   margin: auto 0 0 0;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 991px) {
   .justdoitsign {
     font-size: 2.5rem;
+  }
+  .cards_row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .view_todo_button {
+    margin-right: 5rem !important;
+    margin-bottom: 1rem !important;
   }
 }
