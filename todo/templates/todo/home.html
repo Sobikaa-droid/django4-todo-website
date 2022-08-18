@@ -1,12 +1,12 @@
 {% extends 'todo/base.html' %}
 
-{% block title %}JustDoIt | The fastest way to create your todos{% endblock %}
+{% block title %}FastNote | The fastest way to create your todos{% endblock %}
 
 {% block content %}
 
 <div class="bg-light grey_container">
   <div class='gradient_bar text-center'>
-    <h1 class='text-white justdoitsign'><i class='user-select-none'>Just Do It</i></h1>
+    <h1 class='text-white justdoitsign'><i class='user-select-none'>Just Do It!</i></h1>
   </div>
   <div class="container">
     <div class="bd-masthead" id="content">
@@ -14,8 +14,8 @@
       <div class="text-center mt-5 shadow bg-white" id='home_content'>
         <h1 style='font-size: 3rem;'>Welcome</h1>
         <div class='container w-75'>
-          <p class='text-break'>Life is fun. But life also sucks. There's a million different things you could be doing instead of eating bobiks. But what matters is <u>what</u> bobik you eat. I created <b><i>JustDoIt</i></b> for myself and for you to help you make sense
-            of all of your opportunities and live that life that matters most to you. Your new organized life awaits.</p>
+          <p class='text-break'>Our life is too fast and too busy to keep everything in our head. That's why i created <b><i>FastNote</i></b>, your own fastest way of creating <i>any note you want</i>.
+            Perhaphs, you wanted to note about your friend's birthday, or maybe things you want to buy next time you will go to a mall? Now, you don't have to worry about forgetting it, because they will all be here!</p>
         </div>
         <a role="button" class="btn btn-outline-primary btn-lg" href="{% if user.is_authenticated %}{% url 'createtodo' %}{% else %}{% url 'signupuser' %}{% endif %}">Get Started</a>
       </div>

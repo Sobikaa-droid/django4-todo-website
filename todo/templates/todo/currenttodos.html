@@ -1,6 +1,6 @@
 {% extends 'todo/base.html' %}
 
-{% block title %}Todos{% endblock %}
+{% block title %}Current Notes{% endblock %}
 
 {% block content %}
 
@@ -10,10 +10,10 @@
       {% if todos.count == 0 %}
       <div class='text-center'>
         <h1 class="mb-4">Looks like you have 0 todos</h1>
-        <a role="button" class="btn btn-outline-primary btn-lg mb-5" href="{% url 'createtodo' %}">Create New Todo</a>
+        <a role="button" class="btn btn-outline-primary btn-lg mb-5" href="{% url 'createtodo' %}">Create a New Note</a>
       </div>
       {% else %}
-      <h2 class="text-center">You have {{ todos.count }} unfinished todo{{ todos.count|pluralize }}</h2>
+      <h2 class="text-center">You have {{ todos.count }} current note{{ todos.count|pluralize }}</h2>
       {% endif %}
 
       <div class="list-group mb-5 mt-5">

@@ -1,6 +1,6 @@
 {% extends 'todo/base.html' %}
 
-{% block title %}Completed Todos{% endblock %}
+{% block title %}Completed Notes{% endblock %}
 
 {% block content %}
 
@@ -9,11 +9,11 @@
     <div class="bd-masthead" id="content">
       {% if todos.count == 0 %}
       <div class='text-center'>
-        <h1 class="mb-4">You haven't finished any todo yet</h1>
-        <a role="button" class="btn btn-outline-primary btn-lg mb-5" href="{% url 'createtodo' %}">Create New Todo</a>
+        <h1 class="mb-4">You haven't finished any note yet</h1>
+        <a role="button" class="btn btn-outline-primary btn-lg mb-5" href="{% url 'createtodo' %}">Create a New Note</a>
       </div>
       {% else %}
-      <h2 class="text-center text-success">You have finished {{ todos.count }} todo{{ todos.count|pluralize }}!</h2>
+      <h2 class="text-center text-success">You have finished {{ todos.count }} note{{ todos.count|pluralize }}</h2>
       {% endif %}
 
       <div class="list-group mb-5 mt-5">
