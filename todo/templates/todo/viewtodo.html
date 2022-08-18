@@ -19,10 +19,10 @@
           <form method="POST">
             {% csrf_token %}
             <div class="form-group mt-3">
-              <input type="text" name="title" placeholder="Title" class="form-control" id="title" value="{{ todo.title }}" required>
+              <input type="text" name="title" placeholder="Title" class="form-control" id="title" maxlength="50" value="{{ todo.title }}" required>
             </div>
             <div class="form-group mt-3">
-              <textarea class="form-control" placeholder="Description" id="memo" style="height: 150px" name="memo">{{ todo.memo }}</textarea>
+              <textarea class="form-control" placeholder="Description" id="memo" style="height: 150px" maxlength="3000" name="memo">{{ todo.memo }}</textarea>
             </div>
             <div class="form-group form-check mt-3">
               <input type="checkbox" class="form-check-input" id="important" name="important" {% if todo.important %}checked{% endif %}>

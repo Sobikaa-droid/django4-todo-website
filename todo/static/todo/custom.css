@@ -143,6 +143,16 @@ footer {
     margin-right: 0 !important;
   }
 
+  .cards_row>* {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .row>* {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .view_todo_button {
     margin-right: 5rem !important;
     margin-bottom: 1rem !important;

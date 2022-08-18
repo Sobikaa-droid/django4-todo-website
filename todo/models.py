@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 
 
 class Todo(models.Model):
-    title = models.CharField(max_length=20)
-    memo = models.TextField(blank=True)
+    title = models.CharField(max_length=50)
+    memo = models.TextField(blank=True, max_length=3000)
     creation_date = models.DateTimeField(auto_now_add=True)
     completed_date = models.DateTimeField(null=True, blank=True)
     important = models.BooleanField(default=False)

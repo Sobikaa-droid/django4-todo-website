@@ -19,13 +19,13 @@
           <form method="POST">
             {% csrf_token %}
             <div class="form-group mt-3">
-              <input type="text" name="title" placeholder="Title" class="form-control" id="title">
+              <input type="text" name="title" placeholder="Title" class="form-control" id="title" maxlength="50">
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" placeholder="Description" id="memo" style="height: 150px" name="memo"></textarea>
             </div>
             <div class="mt-3 form-check">
-              <input type="checkbox" class="form-check-input" id="important" name="important">
+              <input type="checkbox" class="form-check-input" id="important" name="important" maxlength="3000">
               <label class="form-check-label" for="important">Important</label>
             </div>
             <div class="mt-3">
